@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Sticky</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        body {
+            padding-top: 66px;
+        }
+
+        .container {
+            /* questa proprietà rende il contenitore il nuovo riferimento per il suo figlio in absolute */
+            position: relative;
+        }
+
+        header {
+            background-color: palegoldenrod;
+            padding-inline: 2rem;
+            padding-block: 0.5rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 900;
+        }
+
+        /* :is() ha specificità di classe quindi (0, 1, 1) */
+        /* header :is(.logo, ul) {
+            vertical-align: middle;
+        } */
+
+        /* :where() non ha specificità quindi (0, 0, 1) */
+        header :where(.logo, ul) {
+            vertical-align: middle;
+        }
+
+        /* ci evita le ripetizioni dei selettori parent */
+        /* header .logo, header ul {
+
+        } */
+
+        ul {
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+
+        ul li {
+            display: inline-block;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            background-color: black;
+            border-radius: 50%;
+        }
+
+
+        .aqua {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        .aqua span {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+            inset: 0;
+            margin: auto;
+        }
+
+        .container h4 {
+            position: sticky;
+            top: 66px;
+        }
+
+        .container h4:first-of-type {
+            background-color: crimson;
+            color: white;
+        }
+
+        .container h4:nth-of-type(2) {
+            background-color: palegreen;
+        }
+
+        .container h4:nth-of-type(3) {
+            background-color: fuchsia;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo"></div>
+        <ul>
+            <li>elemento</li>
+            <li>elemento</li>
+            <li>elemento</li>
+            <li>elemento</li>
+            <li>elemento</li>
+        </ul>
+    </header>
+    <h1>Position Sticky -
+    </h1>
+    <div class="container">
+        <h4>Capitolo 1</h4>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore nam ipsam totam aliquid, eius veniam quas
+            quam aut at distinctio tenetur quos facilis laudantium dolores alias illo dolorem debitis! Itaque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem asperiores voluptas illo officia,
+            non amet earum fugiat, deleniti, molestiae enim corrupti provident quaerat quam quos magnam at quis eligendi
+            pariatur! Corporis repudiandae quibusdam sequi laboriosam vitae, quaerat ipsa nostrum non magni, voluptatem
+            dolorem perferendis veniam eaque beatae fugiat earum velit nemo, optio debitis minus mollitia rerum quasi
+            dolore ipsum. Libero ducimus ex corporis! Neque reprehenderit est, atque consequatur molestias veniam amet
+            qui quia, libero eaque dolores pariatur ad a. Eaque pariatur reprehenderit dolorum omnis quos iste esse
+            consequuntur dicta labore, voluptatum magni quibusdam, et repellat ea voluptate placeat id excepturi?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore nam ipsam totam aliquid, eius veniam
+            quas
+            quam aut at distinctio tenetur quos facilis laudantium dolores alias illo dolorem debitis! Itaque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem asperiores voluptas illo officia,
+            non amet earum fugiat, deleniti, molestiae enim corrupti provident quaerat quam quos magnam at quis eligendi
+            pariatur! Corporis repudiandae quibusdam sequi laboriosam vitae, quaerat ipsa nostrum non magni, voluptatem
+            dolorem perferendis veniam eaque beatae fugiat earum velit nemo, optio debitis minus mollitia rerum quasi
+            dolore ipsum. Libero ducimus ex corporis! Neque reprehenderit est, atque consequatur molestias veniam amet
+            qui quia, libero eaque dolores pariatur ad a. Eaque pariatur reprehenderit dolorum omnis quos iste esse
+            consequuntur dicta labore, voluptatum magni quibusdam, et repellat ea voluptate placeat id excepturi?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore nam ipsam totam aliquid, eius veniam
+            quas
+            quam aut at distinctio tenetur quos facilis laudantium dolores alias illo dolorem debitis! Itaque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem asperiores voluptas illo officia,
+            non amet earum fugiat, deleniti, molestiae enim corrupti provident quaerat quam quos magnam at quis eligendi
+            pariatur! Corporis repudiandae quibusdam sequi laboriosam vitae, quaerat ipsa nostrum non magni, voluptatem
+            dolorem perferendis veniam eaque beatae fugiat earum velit nemo, optio debitis minus mollitia rerum quasi
+            dolore ipsum. Libero ducimus ex corporis! Neque reprehenderit est, atque consequatur molestias veniam amet
+            qui quia, libero eaque dolores pariatur ad a. Eaque pariatur reprehenderit dolorum omnis quos iste esse
+            consequuntur dicta labore, voluptatum magni quibusdam, et repellat ea voluptate placeat id excepturi?</p>
+
+        <h4>Capitolo 2</h4>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore nam ipsam totam aliquid, eius veniam quas
+            quam aut at distinctio tenetur quos facilis laudantium dolores alias illo dolorem debitis! Itaque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem asperiores voluptas illo officia,
+            non amet earum fugiat, deleniti, molestiae enim corrupti provident quaerat quam quos magnam at quis eligendi
+            pariatur! Corporis repudiandae quibusdam sequi laboriosam vitae, quaerat ipsa nostrum non magni, voluptatem
+            dolorem perferendis veniam eaque beatae fugiat earum velit nemo, optio debitis minus mollitia rerum quasi
+            dolore ipsum. Libero ducimus ex corporis! Neque reprehenderit est, atque consequatur molestias veniam amet
+            qui quia, libero eaque dolores pariatur ad a. Eaque pariatur reprehenderit dolorum omnis quos iste esse
+            consequuntur dicta labore, voluptatum magni quibusdam, et repellat ea voluptate placeat id excepturi?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore nam ipsam totam aliquid, eius veniam
+            quas
+            quam aut at distinctio tenetur quos facilis laudantium dolores alias illo dolorem debitis! Itaque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem asperiores voluptas illo officia,
+            non amet earum fugiat, deleniti, molestiae enim corrupti provident quaerat quam quos magnam at quis eligendi
+            pariatur! Corporis repudiandae quibusdam sequi laboriosam vitae, quaerat ipsa nostrum non magni, voluptatem
+            dolorem perferendis veniam eaque beatae fugiat earum velit nemo, optio debitis minus mollitia rerum quasi
+            dolore ipsum. Libero ducimus ex corporis! Neque reprehenderit est, atque consequatur molestias veniam amet
+            qui quia, libero eaque dolores pariatur ad a. Eaque pariatur reprehenderit dolorum omnis quos iste esse
+            consequuntur dicta labore, voluptatum magni quibusdam, et repellat ea voluptate placeat id excepturi?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore nam ipsam totam aliquid, eius veniam
+            quas
+            quam aut at distinctio tenetur quos facilis laudantium dolores alias illo dolorem debitis! Itaque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem asperiores voluptas illo officia,
+            non amet earum fugiat, deleniti, molestiae enim corrupti provident quaerat quam quos magnam at quis eligendi
+            pariatur! Corporis repudiandae quibusdam sequi laboriosam vitae, quaerat ipsa nostrum non magni, voluptatem
+            dolorem perferendis veniam eaque beatae fugiat earum velit nemo, optio debitis minus mollitia rerum quasi
+            dolore ipsum. Libero ducimus ex corporis! Neque reprehenderit est, atque consequatur molestias veniam amet
+            qui quia, libero eaque dolores pariatur ad a. Eaque pariatur reprehenderit dolorum omnis quos iste esse
+            consequuntur dicta labore, voluptatum magni quibusdam, et repellat ea voluptate placeat id excepturi?
+            consequuntur dicta labore, voluptatum magni quibusdam, et repellat ea voluptate placeat id excepturi?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore nam ipsam totam aliquid, eius veniam
+            quas
+            quam aut at distinctio tenetur quos facilis laudantium dolores alias illo dolorem debitis! Itaque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem asperiores voluptas illo officia,
+            non amet earum fugiat, deleniti, molestiae enim corrupti provident quaerat quam quos magnam at quis eligendi
+            pariatur! Corporis repudiandae quibusdam sequi laboriosam vitae, quaerat ipsa nostrum non magni, voluptatem
+            dolorem perferendis veniam eaque beatae fugiat earum velit nemo, optio debitis minus mollitia rerum quasi
+            dolore ipsum. Libero ducimus ex corporis! Neque reprehenderit est, atque consequatur molestias veniam amet
+            qui quia, libero eaque dolores pariatur ad a. Eaque pariatur reprehenderit dolorum omnis quos iste esse
+            consequuntur dicta labore, voluptatum magni quibusdam, et repellat ea voluptate placeat id excepturi?
+            consequuntur dicta labore, voluptatum magni quibusdam, et repellat ea voluptate placeat id excepturi?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore nam ipsam totam aliquid, eius veniam
+            quas
+            quam aut at distinctio tenetur quos facilis laudantium dolores alias illo dolorem debitis! Itaque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem asperiores voluptas illo officia,
+            non amet earum fugiat, deleniti, molestiae enim corrupti provident quaerat quam quos magnam at quis eligendi
+            pariatur! Corporis repudiandae quibusdam sequi laboriosam vitae, quaerat ipsa nostrum non magni, voluptatem
+            dolorem perferendis veniam eaque beatae fugiat earum velit nemo, optio debitis minus mollitia rerum quasi
+            dolore ipsum. Libero ducimus ex corporis! Neque reprehenderit est, atque consequatur molestias veniam amet
+            qui quia, libero eaque dolores pariatur ad a. Eaque pariatur reprehenderit dolorum omnis quos iste esse
+            consequuntur dicta labore, voluptatum magni quibusdam, et repellat ea voluptate placeat id excepturi?</p>
+
+        <h4>Capitolo 3</h4>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore nam ipsam totam aliquid, eius veniam quas
+            quam aut at distinctio tenetur quos facilis laudantium dolores alias illo dolorem debitis! Itaque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem asperiores voluptas illo officia,
+            non amet earum fugiat, deleniti, molestiae enim corrupti provident quaerat quam quos magnam at quis eligendi
+            pariatur! Corporis repudiandae quibusdam sequi laboriosam vitae, quaerat ipsa nostrum non magni, voluptatem
+            dolorem perferendis veniam eaque beatae fugiat earum velit nemo, optio debitis minus mollitia rerum quasi
+            dolore ipsum. Libero ducimus ex corporis! Neque reprehenderit est, atque consequatur molestias veniam amet
+            qui quia, libero eaque dolores pariatur ad a. Eaque pariatur reprehenderit dolorum omnis quos iste esse
+            consequuntur dicta labore, voluptatum magni quibusdam, et repellat ea voluptate placeat id excepturi?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore nam ipsam totam aliquid, eius veniam
+            quas
+            quam aut at distinctio tenetur quos facilis laudantium dolores alias illo dolorem debitis! Itaque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem asperiores voluptas illo officia,
+            non amet earum fugiat, deleniti, molestiae enim corrupti provident quaerat quam quos magnam at quis eligendi
+            pariatur! Corporis repudiandae quibusdam sequi laboriosam vitae, quaerat ipsa nostrum non magni, voluptatem
+            dolorem perferendis veniam eaque beatae fugiat earum velit nemo, optio debitis minus mollitia rerum quasi
+            dolore ipsum. Libero ducimus ex corporis! Neque reprehenderit est, atque consequatur molestias veniam amet
+            qui quia, libero eaque dolores pariatur ad a. Eaque pariatur reprehenderit dolorum omnis quos iste esse
+            consequuntur dicta labore, voluptatum magni quibusdam, et repellat ea voluptate placeat id excepturi?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore nam ipsam totam aliquid, eius veniam
+            quas
+            quam aut at distinctio tenetur quos facilis laudantium dolores alias illo dolorem debitis! Itaque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem asperiores voluptas illo officia,
+            non amet earum fugiat, deleniti, molestiae enim corrupti provident quaerat quam quos magnam at quis eligendi
+            pariatur! Corporis repudiandae quibusdam sequi laboriosam vitae, quaerat ipsa nostrum non magni, voluptatem
+            dolorem perferendis veniam eaque beatae fugiat earum velit nemo, optio debitis minus mollitia rerum quasi
+            dolore ipsum. Libero ducimus ex corporis! Neque reprehenderit est, atque consequatur molestias veniam amet
+            qui quia, libero eaque dolores pariatur ad a. Eaque pariatur reprehenderit dolorum omnis quos iste esse
+            consequuntur dicta labore, voluptatum magni quibusdam, et repellat ea voluptate placeat id excepturi?
+            consequuntur dicta labore, voluptatum magni quibusdam, et repellat ea voluptate placeat id excepturi?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore nam ipsam totam aliquid, eius veniam
+            quas
+            quam aut at distinctio tenetur quos facilis laudantium dolores alias illo dolorem debitis! Itaque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem asperiores voluptas illo officia,
+            non amet earum fugiat, deleniti, molestiae enim corrupti provident quaerat quam quos magnam at quis eligendi
+            pariatur! Corporis repudiandae quibusdam sequi laboriosam vitae, quaerat ipsa nostrum non magni, voluptatem
+            dolorem perferendis veniam eaque beatae fugiat earum velit nemo, optio debitis minus mollitia rerum quasi
+            dolore ipsum. Libero ducimus ex corporis! Neque reprehenderit est, atque consequatur molestias veniam amet
+            qui quia, libero eaque dolores pariatur ad a. Eaque pariatur reprehenderit dolorum omnis quos iste esse
+            consequuntur dicta labore, voluptatum magni quibusdam, et repellat ea voluptate placeat id excepturi?
+            consequuntur dicta labore, voluptatum magni quibusdam, et repellat ea voluptate placeat id excepturi?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore nam ipsam totam aliquid, eius veniam
+            quas
+            quam aut at distinctio tenetur quos facilis laudantium dolores alias illo dolorem debitis! Itaque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem asperiores voluptas illo officia,
+            non amet earum fugiat, deleniti, molestiae enim corrupti provident quaerat quam quos magnam at quis eligendi
+            pariatur! Corporis repudiandae quibusdam sequi laboriosam vitae, quaerat ipsa nostrum non magni, voluptatem
+            dolorem perferendis veniam eaque beatae fugiat earum velit nemo, optio debitis minus mollitia rerum quasi
+            dolore ipsum. Libero ducimus ex corporis! Neque reprehenderit est, atque consequatur molestias veniam amet
+            qui quia, libero eaque dolores pariatur ad a. Eaque pariatur reprehenderit dolorum omnis quos iste esse
+            consequuntur dicta labore, voluptatum magni quibusdam, et repellat ea voluptate placeat id excepturi?</p>
+    </div>
+</body>
+
+</html>

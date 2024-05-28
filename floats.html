@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floats</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header {
+        padding: 1rem;
+        text-align: center;
+        background-color: palegreen;
+    }
+
+    ::selection {
+        background-color: purple;
+        color: white;
+    }
+
+    .container {
+        max-width: 600px;
+        margin-inline: auto;
+        border: 1px solid black;
+        margin-bottom: 2rem;
+    }
+
+    .container header ul {
+        padding: 0;
+    }
+
+    .container header ul li {
+        display: inline-block;
+    }
+
+    .container header ul li:not(:last-of-type) {
+        border-right: 1px solid black;
+        padding-inline-end: 6px;
+    }
+
+    /* .container header ul li:last-of-type {
+        padding-inline-end: unset;
+        border-right: unset;
+    } */
+
+
+    /* clearfix metodo 1 */
+    main {
+        display: flow-root;
+        /* il contenitore conterrà anche l'elemento in float senza necessità di aggiungere elementi extra */
+    }
+
+    /* clearfix metodo 2 */
+    main::after {
+        /* content è obbligatorio (anche vuoto!) altrimenti l'elemento non si genera */
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    img {
+        width: 200px;
+        float: left;
+    }
+
+    p {
+        background-color: paleturquoise;
+        margin: 0;
+    }
+
+    /* clearfix metodo 3 (bisogna applicare la classe ad un elemento di blocco che stia dopo l'elemento con float) */
+    .clearfix {
+        clear: both
+    }
+
+    .box {
+        width: 150px;
+        height: 150px;
+        float: left;
+    }
+
+    .aqua {
+        background-color: aqua
+    }
+
+    .coral {
+        background-color: coral
+    }
+
+    .antique {
+        background-color: antiquewhite
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h3>Float tests</h3>
+            <ul>
+                <li>elemento-1</li>
+                <li>elemento-2</li>
+                <li>elemento-3</li>
+                <li>elemento-4</li>
+            </ul>
+        </header>
+        <main>
+            <img src="https://images.unsplash.com/photo-1716292791850-1e97d89e440b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="sunset on beach">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae aliquam cum error, obcaecati magni, quae,
+                libero corporis quos omnis minima illo iusto? Alias maxime, quam maiores quidem ipsum delectus
+                accusantium!</p>
+            <!-- <div class="clearfix"></div> -->
+            <!-- ::after -->
+        </main>
+    </div>
+    <div class="container">
+        <header>
+            <h3>Float tests</h3>
+            <ul>
+                <li>elemento-1</li>
+                <li>elemento-2</li>
+                <li>elemento-3</li>
+                <li>elemento-4</li>
+            </ul>
+        </header>
+        <main>
+            <img src="https://images.unsplash.com/photo-1716292791850-1e97d89e440b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="sunset on beach">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae aliquam cum error, obcaecati magni, quae,
+                libero corporis quos omnis minima illo iusto? Alias maxime, quam maiores quidem ipsum delectus
+                accusantium!</p>
+            <!-- <div class="clearfix"></div> -->
+            <!-- ::after -->
+        </main>
+
+    </div>
+
+    <div class="container" style="display: flow-root">
+        <div class="box aqua"></div>
+        <div class="box coral"></div>
+        <div class="box antique"></div>
+
+        <p class="clearfix">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ipsam ea hic et adipisci
+            corporis sunt expedita
+            accusantium perspiciatis numquam deleniti reprehenderit explicabo voluptatum assumenda culpa magnam, quod
+            labore commodi sit modi tempora officia, alias minus? Sed, quae eos. Dicta minima qui libero numquam,
+            laborum autem natus veniam sit magni nam, quas, suscipit harum exercitationem culpa enim saepe error
+            pariatur velit. Temporibus repudiandae dicta, enim at vero assumenda molestiae fugit, quo animi ipsam
+            laborum ratione autem hic, aliquam laudantium ab aspernatur rem distinctio amet illum eum. Aliquam
+            perspiciatis porro esse sed tempora deserunt odio qui voluptatum ipsum. Tempora officia facilis adipisci
+            quibusdam nihil assumenda laudantium similique, ipsa exercitationem natus cumque, laboriosam ullam suscipit
+            eius. Atque reiciendis voluptates repellendus doloremque, minus veritatis ducimus quidem necessitatibus sint
+            vel optio molestiae facilis similique velit quasi eaque! Unde facilis recusandae, perspiciatis error
+            similique consequuntur consequatur aliquam aspernatur, saepe officia commodi fugiat porro iste, dolorum
+            nulla ipsam debitis. Sint totam architecto dolore modi quisquam tempore, ipsa facere perspiciatis
+            dignissimos accusamus explicabo, ipsam quis impedit laborum veniam quaerat cum odit laudantium corporis iste
+            consequatur ab! Eum vitae numquam, quibusdam doloribus quas dicta neque architecto consequuntur accusamus
+            deserunt excepturi corporis voluptatem expedita ratione eius repellat laudantium porro, nihil ipsam sapiente
+            dolor quos eligendi officia sed! Cum sunt magni at voluptas porro doloremque? Vitae sint magni distinctio
+            quam quae qui id enim eveniet in numquam amet nisi ut, exercitationem aliquam voluptas explicabo aperiam
+            molestiae. Similique, exercitationem labore neque fuga distinctio voluptate tenetur commodi blanditiis
+            voluptatibus veniam quas? Id nihil aliquid a, nulla, quae odio culpa possimus cupiditate necessitatibus
+            velit modi odit eaque dicta reiciendis tenetur aut eum totam quasi. Voluptatibus minus debitis doloribus?
+            Error sapiente unde corporis fuga vel quas ipsum modi ullam commodi numquam sint quam explicabo nemo
+            dignissimos exercitationem harum enim perferendis delectus illo, itaque obcaecati.</p>
+    </div>
+
+</body>
+
+</html>

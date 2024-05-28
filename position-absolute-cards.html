@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Absolute</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        body {
+            padding: 1rem;
+        }
+
+        .container {
+            /* questa proprietà rende il contenitore il nuovo riferimento per il suo figlio in absolute */
+            position: relative;
+        }
+
+        .aqua {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        .aqua span {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+            inset: 0;
+            margin: auto;
+
+        }
+
+        .card {
+            max-width: 25%;
+            border-radius: 12px;
+            border: 1px solid black;
+            float: left;
+            position: relative;
+        }
+
+        .card .img-wrapper {
+            position: relative;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card .card-body {
+            padding: 1rem;
+        }
+
+        .card .card-body h4 {
+            margin: 0;
+        }
+
+        .ribbon {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: crimson;
+            color: white;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Position Absolute - Permette il posizionamento relativo ad un contenitore posizionato! (position !== static)
+    </h1>
+    <div class="card">
+        <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1716857892405-4a1cc7d34f1c?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="">
+            <span class="ribbon">-20%</span>
+        </div>
+        <div class="card-body">
+            <h4>Titolo</h4>
+            <p>Descrizione Lorem ipsum dolor sit amet.</p>
+            <button>Scopri di più</button>
+        </div>
+    </div>
+    <div class="card">
+        <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1716857892405-4a1cc7d34f1c?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="">
+            <span class="ribbon">-20%</span>
+        </div>
+        <div class="card-body">
+            <h4>Titolo</h4>
+            <p>Descrizione Lorem ipsum dolor sit amet.</p>
+            <button>Scopri di più</button>
+        </div>
+    </div>
+    <div class="card">
+        <div class="img-wrapper">
+            <img src="https://plus.unsplash.com/premium_photo-1670275659287-3a6b5c20300a?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="">
+            <span class="ribbon">-20%</span>
+        </div>
+        <div class="card-body">
+            <h4>Titolo</h4>
+            <p>Descrizione Lorem ipsum dolor sit amet.</p>
+            <button>Scopri di più</button>
+        </div>
+    </div>
+    <div class="card">
+        <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1716857892405-4a1cc7d34f1c?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="">
+            <span class="ribbon">-20%</span>
+        </div>
+        <div class="card-body">
+            <h4>Titolo</h4>
+            <p>Descrizione Lorem ipsum dolor sit amet.</p>
+            <button>Scopri di più</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

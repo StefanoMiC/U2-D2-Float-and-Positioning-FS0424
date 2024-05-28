@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Absolute</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .container {
+            /* questa proprietà rende il contenitore il nuovo riferimento per il suo figlio in absolute */
+            position: relative;
+        }
+
+        .aqua {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        .aqua span {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+            inset: 0;
+            margin: auto;
+
+        }
+
+        img {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            display: none;
+            /* metodo 1 per posizionamento centrato e dinamico rispetto ad un contenitore 
+            inset: 0;
+            margin: auto; 
+            */
+
+            /* metodo 2 per posizionamento centrato e dinamico rispetto ad un contenitore  
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Position Absolute - Permette il posizionamento relativo ad un contenitore posizionato! (position !== static)
+    </h1>
+    <div class="container">
+        <div class="box aqua">
+            <span></span>
+        </div>
+        <div class="box coral"></div>
+        <div class="box antique"></div>
+
+        <img src="https://images.unsplash.com/photo-1716847214513-dfac4f00635b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="">
+    </div>
+</body>
+
+</html>
